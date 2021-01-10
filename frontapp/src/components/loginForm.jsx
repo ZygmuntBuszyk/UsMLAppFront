@@ -19,7 +19,7 @@ function LoginForm() {
       <h1>Login </h1>
         <AvForm onValidSubmit={handleValidSubmit}>
         <AvField name="email" label="Email" required />
-        <AvField name="password" label="Password" required />
+        <AvField name="password"  type="password" label="Password" required />
         <FormGroup>
           <Button>Login</Button>
         </FormGroup>
