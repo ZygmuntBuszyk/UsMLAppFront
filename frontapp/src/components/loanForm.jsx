@@ -1,8 +1,8 @@
 import React from 'react';
-import { AvForm , AvField }from  'availity-reactstrap-validation';
-import { Button, FormGroup } from 'reactstrap';
+import { AvForm , AvField,  AvCheckbox, AvCheckboxGroup }from  'availity-reactstrap-validation';
+import { Button, FormGroup, Container } from 'reactstrap';
 import { axios } from 'axios'
-
+import "../App.css"
 function LoanForm() {
     const handleValidSubmit = (e, values) => {
         console.log(values)
@@ -16,14 +16,46 @@ function LoanForm() {
     }
   return (
     <div className="LoanForm">
-        <h1>Loan Form</h1>
+      <Container>
+      <h1>Loan Form</h1>
+      <div className="loanFormBox">
         <AvForm onValidSubmit={handleValidSubmit}>
-        <AvField name="email" label="Email" required />
-        <AvField name="password" label="Password" required />
+        <AvField name="Firstname" label="Firstname" required />
+        <AvField name="Lastname" label="Lastname" required />
+        <AvField name="Dependants" label="Dependants" type="number" />
+        <AvField name="Applicantincome" label="Applicantincome" type="number" />
+        <AvField name="Coapplicatincome" label="Coapplicatincome" type="number" />
+        <AvField name="Loanamt" label="Loanamt" type="number" />
+        <AvField name="Loanterm" label="Loanterm" type="number" />
+        <AvField name="Credithistory" label="Credithistory" type="number" />
+        <AvCheckboxGroup inline name="Gender" label="Gender" validate={{max: {value: 1}}}>
+          <AvCheckbox label="Male" value="Male" />
+          <AvCheckbox label="Female" value="Female" />
+        </AvCheckboxGroup>
+        <AvCheckboxGroup inline name="Married" label="Married" validate={{max: {value: 1}}}>
+          <AvCheckbox label="Yes" value="Yes" />
+          <AvCheckbox label="No" value="No" />
+        </AvCheckboxGroup>
+        <AvCheckboxGroup inline name="Graduatededucation" label="Graduatededucation" validate={{max: {value: 1}}}>
+          <AvCheckbox label="Graduated" value="Graduated" />
+          <AvCheckbox label="Not Graduate" value="Not_Graduate" />
+        </AvCheckboxGroup>
+        <AvCheckboxGroup inline name="Selfemployed" label="Selfemployeds" validate={{max: {value: 1}}}>
+          <AvCheckbox label="Yes" value="Yes" />
+          <AvCheckbox label="No" value="No" />
+        </AvCheckboxGroup>
+        <AvCheckboxGroup inline name="Area" label="Area" validate={{max: {value: 1}}}>
+          <AvCheckbox label="Rural" value="Rural" />
+          <AvCheckbox label="Semiurban" value="Semiurban" />
+          <AvCheckbox label="Urban" value="Urban" />
+        </AvCheckboxGroup>
         <FormGroup>
           <Button>Submit</Button>
         </FormGroup>
       </AvForm>
+      </div>
+      </Container>
+      
     </div>
   );
 }
