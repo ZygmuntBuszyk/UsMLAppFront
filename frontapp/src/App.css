@@ -92,3 +92,29 @@ input {
   padding: 5px;
   width: 100%;
 }
+
+.logout {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 250ms;
+}
+
+.logout:hover {
+  color: red;
+}
+
+.goBack {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 250ms;
+}
+
+.goBack:hover {
+  color: blue;
+}
